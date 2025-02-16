@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class CampaignController {
 
     private final CampaignService campaignService;
 
+    @Autowired
     public CampaignController(CampaignService campaignService) {
         this.campaignService = campaignService;
     }
@@ -29,6 +31,11 @@ public class CampaignController {
     public ResponseEntity<Void> deleteCampaign(@PathVariable Long id) {
         campaignService.deleteCampaign(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("api/update-campaign/{id}")
+    public Campaign updateCampaign(@PathVariable Long id, @RequestBody Campaign updatedCampaign) {
+        return campaignService.updateCampaign(id, updatedCampaign);
     }
 
 

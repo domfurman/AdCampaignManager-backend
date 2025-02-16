@@ -1,11 +1,8 @@
 package pl.furman.adcampaignmanager_backend.campaign;
 
 import jakarta.persistence.*;
-import lombok.Data;
-
 import java.util.List;
 
-//@Data
 @Entity
 public class Campaign {
     @Id
