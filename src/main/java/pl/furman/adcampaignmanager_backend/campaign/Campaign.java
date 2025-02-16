@@ -1,5 +1,6 @@
 package pl.furman.adcampaignmanager_backend.campaign;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -14,6 +15,7 @@ public class Campaign {
     private List<String> keywords;
     private double bidAmount;
     private double campaignFund;
+    @JsonProperty("isCampaignActive")
     private boolean isCampaignActive;
     private String town;
     private int radius;
