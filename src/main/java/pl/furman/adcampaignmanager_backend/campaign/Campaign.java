@@ -14,7 +14,7 @@ public class Campaign {
     @ElementCollection
     private List<String> keywords;
     private double bidAmount;
-    private double campaignFund;
+    private Double campaignFund;
     @JsonProperty("isCampaignActive")
     private boolean isCampaignActive;
     private String town;
@@ -60,11 +60,11 @@ public class Campaign {
         isCampaignActive = campaignActive;
     }
 
-    public double getCampaignFund() {
+    public Double getCampaignFund() {
         return campaignFund;
     }
 
-    public void setCampaignFund(double campaignFund) {
+    public void setCampaignFund(Double campaignFund) {
         this.campaignFund = campaignFund;
     }
 
