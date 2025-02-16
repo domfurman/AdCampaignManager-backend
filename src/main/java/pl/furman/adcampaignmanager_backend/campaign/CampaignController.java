@@ -38,5 +38,10 @@ public class CampaignController {
         return campaignService.updateCampaign(id, updatedCampaign);
     }
 
+    @GetMapping("api/find-by-id/{id}")
+    public Campaign findCampaignById(@PathVariable Long id) {
+        return campaignService.findById(id);
+    }
+
 
 }

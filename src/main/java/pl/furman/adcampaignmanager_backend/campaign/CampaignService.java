@@ -42,4 +42,8 @@ public class CampaignService {
         return campaignRepository.save(existingCampaign);
     }
 
+    public Campaign findById(Long id) {
+        return this.campaignRepository.findById(id).orElseThrow(() -> new RuntimeException("Campaign not found"));
+    }
+
 }
